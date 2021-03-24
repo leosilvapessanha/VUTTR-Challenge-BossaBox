@@ -1,12 +1,16 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
 
-import { Test } from '../components/test';
+import Header from '../components/header';
 
-const Routes: React.FC = () => (
+interface IThemes {
+  toggleTheme(): void;
+}
+
+const Routes: React.FC<IThemes> = ({ toggleTheme }) => (
   <>
     <Switch>
-      <Route path="/" exact component={Test} />
+      <Route path="/" exact component={Header} />
     </Switch>
   </>
 );
